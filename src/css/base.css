@@ -13,7 +13,7 @@
 /* Применение: Чаще всего используется для объявления CSS-переменных (кастомных свойств), доступных во всем документе. */
 /* :root удобнее для хранения данных */
 :root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Montserrat",
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Montserrat',
     sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -36,18 +36,4 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
-}
-
-main {
-  flex-grow: 1;
-}
-
-main:has(.back-link) {
-  text-align: center;
-}
-
-.main-title {
-  text-align: center;
-  font-size: 40px;
-  margin-bottom: 20px;
 }
