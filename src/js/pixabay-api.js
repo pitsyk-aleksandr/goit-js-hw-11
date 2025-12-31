@@ -25,13 +25,11 @@ export default function getImagesByQuery(query) {
     },
   };
   // Робимо запит GET в API
-  return axios
-    .get('https://pixabay.com/api/', paramsQuery)
-    .then(response => {
-      // Повертаємо значення властивості data з отриманої відповіді
-      return response.data;
-    })
-    .catch(error => {
-      console.log(error);
-    });
+  return axios.get('https://pixabay.com/api/', paramsQuery).then(response => {
+    // Повертаємо значення властивості data з отриманої відповіді
+    return response.data;
+  });
+  // .catch(error => {
+  //   console.log(error);
+  // });
 }

@@ -51,6 +51,7 @@ function onFormSubmit(event) {
       backgroundColor: '#EF4040',
       progressBarColor: '#B51B1B',
       iconUrl: './img/error.svg',
+      iconColor: '#ffffff',
       title: 'ERROR ',
       titleColor: '#ffffff',
       titleSize: '16',
@@ -79,7 +80,6 @@ function onFormSubmit(event) {
     .then(images => {
       // Прибираємо лоадер
       hideLoader();
-
       // Якщо запит не дав результатів (масив з відповідями пустий)
       if (images.length === 0) {
         // Опції вікна сповіщення
@@ -110,6 +110,31 @@ function onFormSubmit(event) {
 
       // Оновлюємо галерею SimpleLightbox
       gallery.refresh();
+    })
+    .catch(error => {
+      // console.log(error);
+
+      // Прибираємо лоадер
+      hideLoader();
+
+      // Опції вікна сповіщення
+      const iziToastSetting = {
+        timeout: 3000,
+        closeOnEscape: true,
+        position: 'topRight',
+        backgroundColor: '#EF4040',
+        progressBarColor: '#B51B1B',
+        iconUrl: './img/error.svg',
+        message: 'Sorry, error accessing resource',
+        messageColor: '#ffffff',
+        messageSize: '16',
+        messageLineHeight: '24',
+        maxWidth: '432',
+      };
+      // Показуємо вікно сповіщення - з помилкою
+      iziToast.show(iziToastSetting);
+      // Вихід з пошуку
+      return;
     });
 
   // Перезавантаження форми та ощищення значень полів форми
